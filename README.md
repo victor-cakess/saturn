@@ -6,11 +6,11 @@ Project Saturn is a **financial data infrastructure** designed to ingest, proces
 
 ### **Problem statement**
 Financial data is **scattered, inconsistent, and inefficiently processed**, making large-scale analysis **slow, unreliable, and expensive**. 
-- **Scattered Sources**: Stock market data, financial reports, economic indicators, crypto prices.  
-- **Inconsistent Formats**: APIs return **JSON, CSV, XML**; real-time and batch data mixed; different time zones and schemas.
-- **Data Integrity Issues**: Missing data, latency discrepancies, duplicate records.
-- **Processing Bottlenecks**: Raw data is **too slow** for real-time decision-making.
-- **Scalability & Cost Challenges**: Cloud costs increase if **queries and storage are not optimized**.
+- **Scattered sources**: Stock market data, financial reports, economic indicators, crypto prices.  
+- **Inconsistent formats**: APIs return **JSON, CSV, XML**; real-time and batch data mixed; different time zones and schemas.
+- **Data integrity issues**: Missing data, latency discrepancies, duplicate records.
+- **Processing bottlenecks**: Raw data is **too slow** for real-time decision-making.
+- **Scalability & cost challenges**: Cloud costs increase if **queries and storage are not optimized**.
 
 ### **Solution**
 Project Saturn provides a **high-performance, end-to-end financial data platform** that:
@@ -25,33 +25,33 @@ Project Saturn provides a **high-performance, end-to-end financial data platform
 
 ## 2. Architecture & tech stack
 ### **Architecture**
-1. **Data Ingestion Layer** → Ingests financial data from multiple sources (APIs, streams, batch processing). 
-2. **Processing Layer** → Cleans, normalizes, and transforms data using distributed computing. 
-3. **Storage Layer** → Stores processed data in **Apache Iceberg**, **Parquet**, and **BigQuery/Redshift** for fast querying. 
-4. **Metadata & Governance Layer** → Ensures schema consistency, data lineage tracking, and quality enforcement. 
-5. **Query & API Layer** → Provides a high-performance SQL interface for analysts, traders, and machine learning applications.  
+1. **Data ingestion layer** → Ingests financial data from multiple sources (APIs, streams, batch processing). 
+2. **Processing layer** → Cleans, normalizes, and transforms data using distributed computing. 
+3. **Storage layer** → Stores processed data in **Apache Iceberg**, **Parquet**, and **BigQuery/Redshift** for fast querying. 
+4. **Metadata & Governance layer** → Ensures schema consistency, data lineage tracking, and quality enforcement. 
+5. **Query & API layer** → Provides a high-performance SQL interface for analysts, traders, and machine learning applications.  
 
 ### **Tech stack**
 #### **Data Ingestion**
-- **Batch Processing** → Apache Airflow + Python API calls
-- **Streaming Ingestion** → Apache Kafka + Apache Flink 
-- **API Sources** → Yahoo Finance, Alpha Vantage, Quandl, SEC Filings, Binance API
+- **Batch processing** → Apache Airflow + Python API calls
+- **Streaming ingestion** → Apache Kafka + Apache Flink 
+- **API sources** → Yahoo Finance, Alpha Vantage, Quandl, SEC Filings, Binance API
 
 #### **Data processing & transformation**
-- **Batch Processing** → Apache Spark (PySpark)
-- **Real-Time Processing** → Apache Flink for streaming transformations
+- **Batch processing** → Apache Spark (PySpark)
+- **Real-time processing** → Apache Flink for streaming transformations
 - **ETL/ELT** → dbt (data build tool) for transformation logic
 
 #### **Storage & querying**
-- **Data Lakehouse** → Apache Iceberg for supports schema evolution and versioning
-- **Cloud Storage** → AWS S3 / Google Cloud Storage (GCS)
-- **Analytical Query Engine** → Google BigQuery / AWS Redshift
-- **Metadata & Governance** → AWS Glue
+- **Data lakehouse** → Apache Iceberg because it supports schema evolution and versioning
+- **Cloud storage** → AWS S3 / Google Cloud Storage (GCS)
+- **Analytical query engine** → Google BigQuery / AWS Redshift
+- **Metadata & governance** → AWS Glue
 
 #### **Monitoring & reliability**
-- **Logging & Monitoring** → Prometheus + Grafana
-- **Data Quality Checks** → Great Expectations / Deequ
-- **Data Lineage Tracking** → OpenLineage / DataHub
+- **Logging & monitoring** → Prometheus + Grafana
+- **Data quality checks** → Great Expectations / Deequ
+- **Data lineage tracking** → OpenLineage / DataHub
 
 #### **Deployment & automation**
 - **Containerization** → Docker + Kubernetes (K8s)
@@ -64,10 +64,10 @@ Project Saturn provides a **high-performance, end-to-end financial data platform
 ### **Sources of data**
 | Data Type            | Source (Example)               | Frequency  |
 |----------------------|--------------------------------|------------|
-| Stock Market Prices | Yahoo Finance API, Alpha Vantage | Real-time & Daily |
-| SEC Filings         | SEC EDGAR API                  | Batch (Daily) |
-| Crypto Prices       | Binance API, CoinGecko API    | Real-time |
-| Economic Indicators | World Bank, Federal Reserve API | Monthly |
+| Stock market prices | Yahoo Finance API, Alpha Vantage | Real-time & daily |
+| SEC filings         | SEC EDGAR API                  | Batch (daily) |
+| Crypto prices       | Binance API, CoinGecko API    | Real-time |
+| Economic indicators | World Bank, Federal Reserve API | Monthly |
 
 ### **Ingestion mechanism**
 - **Kafka (real-time)** → For market prices, crypto prices, and sentiment data.
@@ -78,9 +78,9 @@ Project Saturn provides a **high-performance, end-to-end financial data platform
 
 ## 4. Data processing & transformation
 ### **ETL/ELT Pipelines**
-- **Batch Mode (Airflow + Spark)**: Cleans, normalizes, deduplicates data.
-- **Real-Time Mode (Flink + Kafka)**: Processes financial streams with windowed aggregations.
-- **Schema Evolution (Iceberg)**: Ensures changing data structures do not break pipelines.
+- **Batch mode (Airflow + Spark)**: Cleans, normalizes, deduplicates data.
+- **Real-time mode (Flink + Kafka)**: Processes financial streams with windowed aggregations.
+- **Schema evolution (Iceberg)**: Ensures changing data structures do not break pipelines.
 
 ---
 
@@ -97,8 +97,8 @@ Project Saturn provides a **high-performance, end-to-end financial data platform
 ## 6. Monitoring & reliability
 ### **Fault tolerance & alerting**
 - ✅ **Retry logic for API failures** (Exponential backoff in Airflow/Flink).  
-- ✅ **Kafka Consumer Failover** (Redundant consumer groups).  
-- ✅ **Prometheus + Grafana Dashboards** for performance monitoring.  
+- ✅ **Kafka consumer failover** (Redundant consumer groups).  
+- ✅ **Prometheus + grafana dashboards** for performance monitoring.  
 
 ---
 
@@ -111,7 +111,7 @@ Project Saturn provides a **high-performance, end-to-end financial data platform
 
 ---
 
-## 8. Future Expansion (Project Pluto Integration Plan)
+## 8. Future expansion (Project Pluto)
 - **Plug into Project Pluto for financial modeling & ML**
 - **Provide an API layer for external consumers (trading firms, fintech startups)**
 - **Incorporate AI-driven anomaly detection & risk assessment**
